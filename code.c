@@ -5,20 +5,19 @@
 char **str_split(char *buffer, char *delim, size_t *count)
 {
 	int len;
-	char **retargs, *token, *rest;
-
-	rest = buffer;
+	char **retargs, *token;
+	
 	len = strlen(buffer);
 	retargs = malloc(1 * sizeof(char *));
 
-	token = strtok_r(rest, delim, &rest);
+	token = strtok_r(buffer, delim, &buffer);
 
 	while(token)
 	{
 		retargs = realloc(retargs, (*count + 1) * sizeof(char *));
 		retargs[(*count)++] = token;
 
-		token = strtok_r(NULL, delim, &rest);
+		token = strtok_r(NULL, delim, &buffer);
 	}
 
 	return retargs;
