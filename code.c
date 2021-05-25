@@ -30,8 +30,11 @@ int main()
 	char buffer[] = "Im A Programmer";
 
 	argv = str_split(buffer, " ", &count);
-
-	printf("[%s] [%s] [%s]\n", argv[0], argv[1], argv[2]);
+	
+	for(int i = 0; i < count; i++)
+	    printf("[%s]", argv[i]);
+	
+	puts("");
 
 	free(argv);
 
