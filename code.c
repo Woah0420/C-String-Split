@@ -32,7 +32,7 @@ int main()
 	argv = str_split(buffer, " ", &count);
 	
 	for(int i = 0; i < count; i++)
-	    printf("[%s]", argv[i]);
+		printf("[%s]", argv[i]);
 	
 	puts("");
 
